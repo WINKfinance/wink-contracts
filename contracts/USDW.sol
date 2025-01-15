@@ -9,7 +9,7 @@ import {ERC20PermitUpgradeable} from "@openzeppelin/contracts-upgradeable/token/
 import {Initializable} from "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract WINK is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, AccessControlUpgradeable, ERC20PermitUpgradeable, UUPSUpgradeable {
+contract USDW is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, AccessControlUpgradeable, ERC20PermitUpgradeable, UUPSUpgradeable {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant UPGRADER_ROLE = keccak256("UPGRADER_ROLE");
 
@@ -21,10 +21,10 @@ contract WINK is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, Acce
     function initialize(address defaultAdmin, address minter, address upgrader)
         public initializer
     {
-        __ERC20_init("WINK", "WINK");
+        __ERC20_init("USDW", "USDW");
         __ERC20Burnable_init();
         __AccessControl_init();
-        __ERC20Permit_init("WINK");
+        __ERC20Permit_init("USDW");
         __UUPSUpgradeable_init();
 
         _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
